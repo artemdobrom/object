@@ -1,17 +1,28 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
+
 public class Main {
+
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Author tolstoi = new Author("Лев", "Толстой");
+        Author pushkin = new Author("Александр", "Пушкин");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Book vojnaIMir = new Book("Война и мир", tolstoi, 1856);
+        Book zolotajaRyibka = new Book("Золотая рыбка", pushkin, 1891);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.println(vojnaIMir.getTitle() +", "+ vojnaIMir.getPublicationYear() +", "+ vojnaIMir.getAuthor().getFirstName()+" "+vojnaIMir.getAuthor().getSecondName());
+
+        printBook(zolotajaRyibka);
+
+
+        vojnaIMir.setPublicationYear(2010);
+
+        printBook(vojnaIMir);
+
     }
-}
+
+    private static void printBook(Book book) {
+        System.out.println(book.getTitle() + ", " + book.getPublicationYear() + ", " + book.getAuthor().getFirstName() + " " + book.getAuthor().getSecondName());
+    }
+
+
+    }
