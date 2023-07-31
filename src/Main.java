@@ -18,10 +18,18 @@ public class Main {
 
         printBook(vojnaIMir);
 
+        System.out.println(vojnaIMir.equals(zolotajaRyibka));
+
+        Book vojnaIMirTwo = new Book("Война и мир", tolstoi, 2010);
+
+        System.out.println("vojnaIMir.equals(vojnaIMirTwo) = " + vojnaIMir.equals(vojnaIMirTwo));
+
+        System.out.println("tolstoi.getClass() = " + tolstoi.getClass());
+        System.out.println("vojnaIMir.getClass() = " + vojnaIMir.getClass());
     }
 
     private static void printBook(Book book) {
-        System.out.println(book.getTitle() + ", " + book.getPublicationYear() + ", " + book.getAuthor().getFirstName() + " " + book.getAuthor().getSecondName());
+        System.out.println(book.toString());
     }
 
 
